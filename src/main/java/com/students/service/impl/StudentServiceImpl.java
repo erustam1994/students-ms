@@ -1,7 +1,8 @@
 package com.students.service.impl;
 
-import com.students.exception.StudentException;
-import com.students.model.StudentDto;
+import com.students.dto.StudentDto;
+import com.students.exception.ResourceNotFoundException;
+import com.students.mapper.StudentMapper;
 import com.students.repository.StudentRepository;
 import com.students.service.StudentService;
 import org.springframework.stereotype.Service;
@@ -19,43 +20,30 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public List<StudentDto> getStudents() {
-        return studentRepository.getStudents();
+        return StudentMapper.StudentsToStudentDtos(studentRepository.findAll());
     }
 
     @Override
-    public StudentDto getStudents(Long id) {
-        return studentRepository.getStudents(id);
+    public StudentDto getStudent(Long id) {
+        return StudentMapper.StudentToStudentDto(studentRepository.findById(id)
+                .orElseThrow(ResourceNotFoundException::new));
     }
 
     @Override
-    public boolean addStudent(StudentDto student) {
-        if (studentRepository.getStudents(student.getId()) == null) {
-            studentRepository.addStudent(student);
-            return true;
-        } else return false;
+    public void addStudent(StudentDto student) {
+        student.setId(null);
+        studentRepository.save(StudentMapper.StudentDtoToStudent(student));
     }
 
     @Override
-    public boolean deleteStudent(Long id) {
-        StudentDto student = getStudents(id);
-        if (student == null) return false;
-        else {
-            studentRepository.deleteStudent(student);
-            return true;
-        }
+    public void updateStudent(Long id, StudentDto student) {
+        student.setId(getStudent(id).getId());
+        studentRepository.save(StudentMapper.StudentDtoToStudent(student));
     }
 
     @Override
-    public boolean updateStudent(Long id, StudentDto student) {
-        StudentDto currentStudent = studentRepository.getStudents(id);
-        if (currentStudent == null) throw new StudentException("Student not found");
-
-        student.setId(id);
-        student.setName((student.getName() == null) ? currentStudent.getName() : student.getName().trim());
-        student.setBirthday((student.getBirthday() == null) ? currentStudent.getBirthday() : student.getBirthday());
-
-        studentRepository.update(student);
-
-        return true;
+    public void deleteStudent(Long id) {
+        studentRepository.delete(studentRepository.findById(id)
+                .orElseThrow(ResourceNotFoundException::new));
     }
 }

@@ -1,13 +1,17 @@
 package com.students.service;
 
-import com.students.model.StudentDto;
+import com.students.dto.StudentDto;
 
 import java.util.List;
 
 public interface StudentService {
     List<StudentDto> getStudents();
-    StudentDto getStudents(Long id);
-    boolean addStudent(StudentDto student);
-    boolean deleteStudent(Long id);
-    boolean updateStudent(Long id, StudentDto student);
+
+    StudentDto getStudent(Long id);
+
+    void addStudent(StudentDto student);
+
+    void updateStudent(Long id, StudentDto student);
+
+    void deleteStudent(Long id);
 }

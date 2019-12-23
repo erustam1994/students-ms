@@ -1,4 +1,4 @@
-package com.students.model;
+package com.students.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
