@@ -1,7 +1,7 @@
 package com.students.service.impl;
 
+import com.students.exception.StudentNotFoundException;
 import com.students.dto.StudentDto;
-import com.students.exception.ResourceNotFoundException;
 import com.students.mapper.StudentMapper;
 import com.students.repository.StudentRepository;
 import com.students.service.StudentService;
@@ -26,7 +26,7 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public StudentDto getStudent(Long id) {
         return StudentMapper.StudentToStudentDto(studentRepository.findById(id)
-                .orElseThrow(ResourceNotFoundException::new));
+                .orElseThrow(()->new StudentNotFoundException("no-found")));
     }
 
     @Override
@@ -44,6 +44,6 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public void deleteStudent(Long id) {
         studentRepository.delete(studentRepository.findById(id)
-                .orElseThrow(ResourceNotFoundException::new));
+                .orElseThrow(()->new StudentNotFoundException("no-found")));
     }
 }
