@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class ExceptionController {
 
-    public static final String ERROR = "exception.student.";
+    private static final String ERROR = "exception.student.";
 
     @ExceptionHandler(StudentNotFoundException.class)
     public ResponseEntity<StudentExceptionDto> handleRuntimeException(StudentNotFoundException exc) {
