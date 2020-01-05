@@ -2,6 +2,7 @@ package com.students.mapper;
 
 import com.students.dao.Student;
 import com.students.dto.StudentDto;
+import org.springframework.data.domain.Page;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -36,4 +37,13 @@ public abstract class StudentMapper {
                 .map(StudentMapper::StudentDtoToStudent)
                 .collect(Collectors.toList());
     }
+
+    public static Page<StudentDto> PageStudentsToPageStudentDtos(Page<Student> page){
+        return page.map(StudentMapper::StudentToStudentDto);
+    }
+
+    public static Page<Student> PageStudentDtosToPageStudents(Page<StudentDto> page){
+        return page.map(StudentMapper::StudentDtoToStudent);
+    }
+
 }

@@ -5,7 +5,10 @@ import com.students.dto.StudentDto;
 import com.students.mapper.StudentMapper;
 import com.students.repository.StudentRepository;
 import com.students.service.StudentService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
 
 import java.util.List;
 
@@ -19,14 +22,19 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public List<StudentDto> getStudents() {
-        return StudentMapper.StudentsToStudentDtos(studentRepository.findAll());
+    public Page<StudentDto> getStudents(Pageable pageable) {
+        return StudentMapper.PageStudentsToPageStudentDtos(studentRepository.findAll(pageable));
     }
 
     @Override
     public StudentDto getStudent(Long id) {
         return StudentMapper.StudentToStudentDto(studentRepository.findById(id)
                 .orElseThrow(()->new StudentNotFoundException("no-found")));
+    }
+
+    @Override
+    public List<StudentDto> getStudentsByName(String name) {
+        return StudentMapper.StudentsToStudentDtos(studentRepository.findStudentsByNameContains(name));
     }
 
     @Override

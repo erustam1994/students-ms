@@ -2,6 +2,8 @@ package com.students.controller;
 
 import com.students.dto.StudentDto;
 import com.students.service.StudentService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,8 +20,8 @@ public class StudentController {
     }
 
     @GetMapping
-    public List<StudentDto> getStudents() {
-        return studentService.getStudents();
+    public Page<StudentDto> getStudents(Pageable pageable) {
+        return studentService.getStudents(pageable);
     }
 
     @GetMapping("{id}")
@@ -41,5 +43,7 @@ public class StudentController {
     public void deleteStudent(@PathVariable Long id) {
         studentService.deleteStudent(id);
     }
+
+
 
 }
