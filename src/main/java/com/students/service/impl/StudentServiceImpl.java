@@ -1,5 +1,6 @@
 package com.students.service.impl;
 
+import com.students.dao.Student;
 import com.students.exception.StudentNotFoundException;
 import com.students.dto.StudentDto;
 import com.students.mapper.StudentMapper;
@@ -45,8 +46,10 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public void updateStudent(Long id, StudentDto student) {
-        student.setId(getStudent(id).getId());
-        studentRepository.save(StudentMapper.StudentDtoToStudent(student));
+        Student newStudent = studentRepository.findById(id).orElseThrow(()->new StudentNotFoundException("no-found"));
+        newStudent.setName(student.getName());
+        newStudent.setBirthday(student.getBirthday());
+        studentRepository.save(newStudent);
     }
 
     @Override
