@@ -1,7 +1,6 @@
 databaseChangeLog:
-  - logicalFilePath: db/changelog/db.changelog-lesson1.yaml
   - changeSet:
-      id: 1
+      id: 0.1
       author: e_rustam
       changes:
         - createTable:
@@ -25,4 +24,4 @@ databaseChangeLog:
                   type: timestamp
               - column:
                   name: created_at
-                  type: date
+                  type: timestamp

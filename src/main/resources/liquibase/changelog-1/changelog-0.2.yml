@@ -1,0 +1,80 @@
+databaseChangeLog:
+  - changeSet:
+      id: 0.2
+      author: e_rustam
+      changes:
+        - insert:
+            tableName: student
+            columns:
+              - column:
+                  name: name
+                  value: "Emin"
+              - column:
+                  name: birthday
+                  value: "1995-01-16"
+              - column:
+                  name: updated_at
+                  value: ${now}
+              - column:
+                  name: created_at
+                  value: ${now}
+        - insert:
+            tableName: student
+            columns:
+              - column:
+                  name: name
+                  value: "Anar"
+              - column:
+                  name: birthday
+                  value: "1994-02-13"
+              - column:
+                  name: updated_at
+                  value: ${now}
+              - column:
+                  name: created_at
+                  value: ${now}
+        - insert:
+            tableName: student
+            columns:
+              - column:
+                  name: name
+                  value: "Alixan"
+              - column:
+                  name: birthday
+                  value: "1984-02-27"
+              - column:
+                  name: updated_at
+                  value: ${now}
+              - column:
+                  name: created_at
+                  value: ${now}
+        - insert:
+            tableName: student
+            columns:
+              - column:
+                  name: name
+                  value: "Zeynab"
+              - column:
+                  name: birthday
+                  value: "1991-11-12"
+              - column:
+                  name: updated_at
+                  value: ${now}
+              - column:
+                  name: created_at
+                  value: ${now}
+        - insert:
+            tableName: student
+            columns:
+              - column:
+                  name: name
+                  value: "John"
+              - column:
+                  name: birthday
+                  value: "1987-05-11"
+              - column:
+                  name: updated_at
+                  value: ${now}
+              - column:
+                  name: created_at
+                  value: ${now}
