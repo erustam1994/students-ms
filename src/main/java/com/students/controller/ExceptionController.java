@@ -14,7 +14,7 @@ public class ExceptionController {
     private static final String ERROR = "exception.student.";
 
     @ExceptionHandler(StudentNotFoundException.class)
-    public ResponseEntity<StudentExceptionDto> handleRuntimeException(StudentNotFoundException exc) {
+    public ResponseEntity<StudentExceptionDto> handleStudentNotFoundException(StudentNotFoundException exc) {
         return new ResponseEntity<>(new StudentExceptionDto(ERROR+exc.getMessage()), HttpStatus.NOT_FOUND);
     }
 
