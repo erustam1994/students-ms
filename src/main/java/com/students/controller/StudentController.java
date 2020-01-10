@@ -6,8 +6,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @CrossOrigin
 @RestController
 @RequestMapping("/students")
@@ -43,7 +41,5 @@ public class StudentController {
     public void deleteStudent(@PathVariable Long id) {
         studentService.deleteStudent(id);
     }
-
-
 
 }

@@ -30,7 +30,7 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public StudentDto getStudent(Long id) {
         return StudentMapper.StudentToStudentDto(studentRepository.findById(id)
-                .orElseThrow(()->new StudentNotFoundException("no-found")));
+                .orElseThrow(()->new StudentNotFoundException("not-found")));
     }
 
     @Override
@@ -46,7 +46,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public void updateStudent(Long id, StudentDto student) {
-        Student newStudent = studentRepository.findById(id).orElseThrow(()->new StudentNotFoundException("no-found"));
+        Student newStudent = studentRepository.findById(id).orElseThrow(()->new StudentNotFoundException("not-found"));
         newStudent.setName(student.getName());
         newStudent.setBirthday(student.getBirthday());
         studentRepository.save(newStudent);
