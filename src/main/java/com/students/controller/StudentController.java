@@ -18,12 +18,12 @@ public class StudentController {
     }
 
     @GetMapping
-    public Page<StudentDto> getStudents(Pageable pageable) {
+    public Page<StudentDto> getStudent(Pageable pageable) {
         return studentService.getStudents(pageable);
     }
 
     @GetMapping("{id}")
-    public StudentDto getStudents(@PathVariable Long id) {
+    public StudentDto getStudent(@PathVariable Long id) {
         return studentService.getStudent(id);
     }
 

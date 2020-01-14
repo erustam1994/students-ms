@@ -1,17 +1,23 @@
 databaseChangeLog:
   - changeSet:
-      id: 0.3
+      id: Add users 1
       author: e_rustam
       changes:
         - insert:
             tableName: student
             columns:
               - column:
+                  name: id
+                  value: 1
+              - column:
+                  name: deleted
+                  value: 0
+              - column:
                   name: name
-                  value: "Alina"
+                  value: "Emin"
               - column:
                   name: birthday
-                  value: "1999-02-11"
+                  value: "1995-01-16"
               - column:
                   name: updated_at
                   value: ${now}
@@ -22,11 +28,17 @@ databaseChangeLog:
             tableName: student
             columns:
               - column:
+                  name: id
+                  value: 2
+              - column:
+                  name: deleted
+                  value: 0
+              - column:
                   name: name
-                  value: "Bob"
+                  value: "Anar"
               - column:
                   name: birthday
-                  value: "1987-01-09"
+                  value: "1994-02-13"
               - column:
                   name: updated_at
                   value: ${now}
@@ -37,11 +49,17 @@ databaseChangeLog:
             tableName: student
             columns:
               - column:
+                  name: id
+                  value: 3
+              - column:
+                  name: deleted
+                  value: 0
+              - column:
                   name: name
-                  value: "Alex"
+                  value: "Alixan"
               - column:
                   name: birthday
-                  value: "2000-10-11"
+                  value: "1984-02-27"
               - column:
                   name: updated_at
                   value: ${now}
@@ -52,11 +70,17 @@ databaseChangeLog:
             tableName: student
             columns:
               - column:
+                  name: id
+                  value: 4
+              - column:
+                  name: deleted
+                  value: 0
+              - column:
                   name: name
-                  value: "Greg"
+                  value: "Zeynab"
               - column:
                   name: birthday
-                  value: "1992-10-05"
+                  value: "1991-11-12"
               - column:
                   name: updated_at
                   value: ${now}
@@ -67,11 +91,17 @@ databaseChangeLog:
             tableName: student
             columns:
               - column:
+                  name: id
+                  value: 5
+              - column:
+                  name: deleted
+                  value: 0
+              - column:
                   name: name
-                  value: "Jack"
+                  value: "John"
               - column:
                   name: birthday
-                  value: "1986-02-14"
+                  value: "1987-05-11"
               - column:
                   name: updated_at
                   value: ${now}

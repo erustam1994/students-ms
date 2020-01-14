@@ -1,11 +1,17 @@
 databaseChangeLog:
   - changeSet:
-      id: 0.4
+      id: Add users 3
       author: e_rustam
       changes:
         - insert:
             tableName: student
             columns:
+              - column:
+                  name: id
+                  value: 11
+              - column:
+                  name: deleted
+                  value: 0
               - column:
                   name: name
                   value: "Sabina"
@@ -22,6 +28,12 @@ databaseChangeLog:
             tableName: student
             columns:
               - column:
+                  name: id
+                  value: 12
+              - column:
+                  name: deleted
+                  value: 0
+              - column:
                   name: name
                   value: "Dan"
               - column:
@@ -36,6 +48,12 @@ databaseChangeLog:
         - insert:
             tableName: student
             columns:
+              - column:
+                  name: id
+                  value: 13
+              - column:
+                  name: deleted
+                  value: 0
               - column:
                   name: name
                   value: "Ben"
@@ -52,6 +70,12 @@ databaseChangeLog:
             tableName: student
             columns:
               - column:
+                  name: id
+                  value: 14
+              - column:
+                  name: deleted
+                  value: 0
+              - column:
                   name: name
                   value: "Bahadur"
               - column:
@@ -66,6 +90,12 @@ databaseChangeLog:
         - insert:
             tableName: student
             columns:
+              - column:
+                  name: id
+                  value: 15
+              - column:
+                  name: deleted
+                  value: 0
               - column:
                   name: name
                   value: "Lisa"

@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: 0.1
+      id: Create Student Table
       author: e_rustam
       changes:
         - createTable:
@@ -9,7 +9,6 @@ databaseChangeLog:
               - column:
                   name: id
                   type: BIGINT
-                  autoIncrement: true
                   constraints:
                     primaryKey: true
                     nullable: false
@@ -19,6 +18,12 @@ databaseChangeLog:
               - column:
                   name: birthday
                   type: date
+              - column:
+                  name: deleted
+                  type: boolean
+              - column:
+                  name: university_id
+                  type: int
               - column:
                   name: updated_at
                   type: timestamp

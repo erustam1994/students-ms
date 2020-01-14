@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class StudentNotFoundException extends RuntimeException {
+public class NotFoundException extends RuntimeException {
 
     private String message;
 
