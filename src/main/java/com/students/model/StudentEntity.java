@@ -10,13 +10,15 @@ import org.hibernate.annotations.Where;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Entity
+@Entity(name = "student")
 @Table(name = "student")
 @EntityListeners(AuditListener.class)
 @SQLDelete(sql ="UPDATE student SET deleted = true WHERE id = ?")
@@ -49,7 +51,7 @@ public class StudentEntity implements Auditable {
     private Audit audit;
 
     @ManyToMany
-    private List<UniversityEntity> universities = new ArrayList<>();
+    private Set<UniversityEntity> universities = new HashSet<>();
 
     @PrePersist
     public void prePersist(){

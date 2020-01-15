@@ -9,7 +9,9 @@ import lombok.NoArgsConstructor;
 import javax.validation.constraints.NotBlank;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @Builder
@@ -21,6 +23,6 @@ public class StudentDto {
     private String name;
     @NotBlank(message = "Birthday is mandatory")
     private LocalDate birthday;
-    private List<UniversityDto> universities = new ArrayList<>();
+    private Set<UniversityDto> universities = new HashSet<>();
 
 }

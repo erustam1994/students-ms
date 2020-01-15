@@ -1,0 +1,59 @@
+databaseChangeLog:
+  - changeSet:
+      id: Add universities
+      author: e_rustam
+      changes:
+        - insert:
+            tableName: university
+            columns:
+              - column:
+                  name: id
+                  value: 1
+              - column:
+                  name: deleted
+                  value: 0
+              - column:
+                  name: name
+                  value: "Oxford"
+              - column:
+                  name: updated_at
+                  value: ${now}
+              - column:
+                  name: created_at
+                  value: ${now}
+        - insert:
+            tableName: university
+            columns:
+              - column:
+                  name: id
+                  value: 2
+              - column:
+                  name: deleted
+                  value: 0
+              - column:
+                  name: name
+                  value: "Oil Academy"
+              - column:
+                  name: updated_at
+                  value: ${now}
+              - column:
+                  name: created_at
+                  value: ${now}
+        - insert:
+            tableName: university
+            columns:
+              - column:
+                  name: id
+                  value: 3
+              - column:
+                  name: deleted
+                  value: 0
+              - column:
+                  name: name
+                  value: "Finance University"
+              - column:
+                  name: updated_at
+                  value: ${now}
+              - column:
+                  name: created_at
+                  value: ${now}

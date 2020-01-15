@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class ExceptionController {
 
-    private static final String ERROR = "exception.student.";
+    private static final String ERROR = "exception.";
 
     @ExceptionHandler(NotFoundException.class)
     public ResponseEntity<ExceptionDto> handleStudentNotFoundException(NotFoundException exc) {

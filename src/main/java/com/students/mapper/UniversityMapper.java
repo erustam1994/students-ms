@@ -5,6 +5,7 @@ import com.students.model.UniversityEntity;
 import org.springframework.data.domain.Page;
 
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
@@ -26,16 +27,16 @@ public abstract class UniversityMapper {
                 .build();
     }
 
-    public static List<UniversityDto> UniversitiesToUniversityDtos(Iterable<UniversityEntity> universityEntities) {
+    public static Set<UniversityDto> UniversitiesToUniversityDtos(Iterable<UniversityEntity> universityEntities) {
         return StreamSupport.stream(universityEntities.spliterator(), false)
                 .map(UniversityMapper::UniversityToUniversityDto)
-                .collect(Collectors.toList());
+                .collect(Collectors.toSet());
     }
 
-    public static List<UniversityEntity> UniversityDtosToUniversities(Iterable<UniversityDto> universityDtos) {
+    public static Set<UniversityEntity> UniversityDtosToUniversities(Iterable<UniversityDto> universityDtos) {
         return StreamSupport.stream(universityDtos.spliterator(), false)
                 .map(UniversityMapper::UniversityDtoToUniversity)
-                .collect(Collectors.toList());
+                .collect(Collectors.toSet());
     }
 
     public static Page<UniversityDto> PageUniversitiesToUniversityDtos(Page<UniversityEntity> page) {

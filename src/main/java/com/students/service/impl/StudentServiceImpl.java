@@ -1,5 +1,6 @@
 package com.students.service.impl;
 
+import com.students.mapper.UniversityMapper;
 import com.students.model.StudentEntity;
 import com.students.exception.NotFoundException;
 import com.students.dto.StudentDto;
@@ -27,7 +28,7 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public StudentDto getStudent(Long id) {
         return StudentMapper.StudentToStudentDto(studentRepository.findById(id)
-                .orElseThrow(()->new NotFoundException("not-found")));
+                .orElseThrow(()->new NotFoundException("student.not-found")));
     }
 
     @Override
@@ -38,15 +39,16 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public void updateStudent(Long id, StudentDto student) {
-        StudentEntity newStudentEntity = studentRepository.findById(id).orElseThrow(()->new NotFoundException("not-found"));
+        StudentEntity newStudentEntity = studentRepository.findById(id).orElseThrow(()->new NotFoundException("student.not-found"));
         newStudentEntity.setName(student.getName());
         newStudentEntity.setBirthday(student.getBirthday());
+        newStudentEntity.setUniversities(UniversityMapper.UniversityDtosToUniversities(student.getUniversities()));
         studentRepository.save(newStudentEntity);
     }
 
     @Override
     public void deleteStudent(Long id) {
         studentRepository.delete(studentRepository.findById(id)
-                .orElseThrow(()->new NotFoundException("not-found")));
+                .orElseThrow(()->new NotFoundException("student.not-found")));
     }
 }

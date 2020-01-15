@@ -1,0 +1,131 @@
+databaseChangeLog:
+  - changeSet:
+      id: Add references student_universities
+      author: e_rustam
+      changes:
+        - insert:
+            tableName: student_universities
+            columns:
+              - column:
+                  name: student_id
+                  value: 1
+              - column:
+                  name: universities_id
+                  value: 1
+        - insert:
+            tableName: student_universities
+            columns:
+              - column:
+                  name: student_id
+                  value: 1
+              - column:
+                  name: universities_id
+                  value: 2
+        - insert:
+            tableName: student_universities
+            columns:
+              - column:
+                  name: student_id
+                  value: 2
+              - column:
+                  name: universities_id
+                  value: 3
+        - insert:
+            tableName: student_universities
+            columns:
+              - column:
+                  name: student_id
+                  value: 3
+              - column:
+                  name: universities_id
+                  value: 1
+        - insert:
+            tableName: student_universities
+            columns:
+              - column:
+                  name: student_id
+                  value: 4
+              - column:
+                  name: universities_id
+                  value: 3
+        - insert:
+            tableName: student_universities
+            columns:
+              - column:
+                  name: student_id
+                  value: 5
+              - column:
+                  name: universities_id
+                  value: 1
+        - insert:
+            tableName: student_universities
+            columns:
+              - column:
+                  name: student_id
+                  value: 5
+              - column:
+                  name: universities_id
+                  value: 3
+        - insert:
+            tableName: student_universities
+            columns:
+              - column:
+                  name: student_id
+                  value: 6
+              - column:
+                  name: universities_id
+                  value: 2
+        - insert:
+            tableName: student_universities
+            columns:
+              - column:
+                  name: student_id
+                  value: 7
+              - column:
+                  name: universities_id
+                  value: 3
+        - insert:
+            tableName: student_universities
+            columns:
+              - column:
+                  name: student_id
+                  value: 10
+              - column:
+                  name: universities_id
+                  value: 1
+        - insert:
+            tableName: student_universities
+            columns:
+              - column:
+                  name: student_id
+                  value: 11
+              - column:
+                  name: universities_id
+                  value: 2
+        - insert:
+            tableName: student_universities
+            columns:
+              - column:
+                  name: student_id
+                  value: 12
+              - column:
+                  name: universities_id
+                  value: 3
+        - insert:
+            tableName: student_universities
+            columns:
+              - column:
+                  name: student_id
+                  value: 14
+              - column:
+                  name: universities_id
+                  value: 2
+        - insert:
+            tableName: student_universities
+            columns:
+              - column:
+                  name: student_id
+                  value: 15
+              - column:
+                  name: universities_id
+                  value: 1

@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: Add users 1
+      id: Add students 1
       author: e_rustam
       changes:
         - insert:

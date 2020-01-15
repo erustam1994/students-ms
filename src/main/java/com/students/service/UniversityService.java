@@ -14,7 +14,7 @@ public interface UniversityService {
 
     void addUniversity(UniversityDto student);
 
-//    void updateUniversity(Long id, UniversityDto student);
-//
-//    void deleteUniversity(Long id);
+    void updateUniversity(Long id, UniversityDto student);
+
+    void deleteUniversity(Long id);
 }

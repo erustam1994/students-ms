@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create Students-Universities Table
+      author: e_rustam
+      changes:
+        - createTable:
+            tableName: student_universities
+            columns:
+              - column:
+                  name: student_id
+                  type: BIGINT
+              - column:
+                  name: universities_id
+                  type: BIGINT

@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create University Sequence
+      author: e_rustam
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: university_sequence
+            startValue: 4

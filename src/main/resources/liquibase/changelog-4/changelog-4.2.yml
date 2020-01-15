@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: addForeignKeyConstraint Students Universities
+      author: e_rustam
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: student_id
+            baseTableName: student_universities
+            constraintName: fk_student_id_su
+            referencedColumnNames: id
+            referencedTableName: student
+            validate: true
+        - addForeignKeyConstraint:
+            baseColumnNames: universities_id
+            baseTableName: student_universities
+            constraintName: fk_university_id_su
+            referencedColumnNames: id
+            referencedTableName: university
+            validate: true

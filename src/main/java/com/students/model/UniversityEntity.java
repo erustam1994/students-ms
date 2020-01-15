@@ -11,7 +11,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
+@Entity(name = "university")
 @Data
 @Builder
 @AllArgsConstructor
@@ -26,7 +26,7 @@ public class UniversityEntity implements Auditable {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence-generator")
-    @SequenceGenerator(name = "sequence-generator", sequenceName = "university_sequence")
+    @SequenceGenerator(name = "sequence-generator", sequenceName = "university_sequence", initialValue = 4)
     private Long id;
     @Column(name = "name")
     private String name;
@@ -34,8 +34,8 @@ public class UniversityEntity implements Auditable {
     private Boolean deleted;
     @Embedded
     private Audit audit;
-    @ManyToMany(mappedBy = "universities")
-    private List<StudentEntity> students = new ArrayList<>();
+//    @ManyToMany(mappedBy = "universities")
+//    private List<StudentEntity> students = new ArrayList<>();
 
     @PrePersist
     public void prePersist() {
