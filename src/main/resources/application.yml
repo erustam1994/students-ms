@@ -1,6 +1,9 @@
 server:
   port: 8082
 spring:
+  data:
+    rest:
+      max-page-size: 100000
   liquibase:
     change-log: classpath:liquibase/changelog.master.yml
     enabled: true
